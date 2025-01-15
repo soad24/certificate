@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/Tabs';
 import RegisteredEvents from './RegisteredEvents';
 import StudentTranscript from './StudentTranscript';
@@ -11,6 +11,7 @@ interface StudentProfileProps {
 }
 
 export default function StudentProfile({ student }: StudentProfileProps) {
+  const [activeTab, setActiveTab] = useState('events');
   const isEligible = isEligibleForEjaadaCertificate(student);
   const progress = calculateProgress(student.totalPoints);
 
@@ -50,7 +51,7 @@ export default function StudentProfile({ student }: StudentProfileProps) {
       </div>
 
       {/* Tabs */}
-      <Tabs defaultValue="events" className="w-full">
+      <Tabs value={activeTab} onChange={setActiveTab} className="w-full">
         <TabsList>
           <TabsTrigger value="events">Registered Events</TabsTrigger>
           <TabsTrigger value="transcript">Transcript</TabsTrigger>
