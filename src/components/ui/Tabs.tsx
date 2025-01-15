@@ -1,7 +1,8 @@
 import React from 'react';
 
 interface TabsProps {
-  defaultValue: string;
+  value: string;
+  onChange?: (value: string) => void;
   children: React.ReactNode;
   className?: string;
 }
@@ -25,11 +26,13 @@ const TabsContext = React.createContext<{
   onChange: (value: string) => void;
 } | null>(null);
 
-export function Tabs({ defaultValue, children, className = '' }: TabsProps) {
-  const [value, setValue] = React.useState(defaultValue);
+export function Tabs({ value, onChange, children, className = '' }: TabsProps) {
+  const handleChange = (newValue: string) => {
+    onChange?.(newValue);
+  };
 
   return (
-    <TabsContext.Provider value={{ value, onChange: setValue }}>
+    <TabsContext.Provider value={{ value, onChange: handleChange }}>
       <div className={`space-y-4 ${className}`}>{children}</div>
     </TabsContext.Provider>
   );
@@ -54,7 +57,7 @@ export function TabsTrigger({ value, children }: TabsTriggerProps) {
       className={`px-4 py-2 text-sm font-medium transition-colors relative
         ${
           isActive
-            ? 'text-blue-600 border-b-2 border-blue-600'
+            ? 'text-orange-600 border-b-2 border-orange-600'
             : 'text-gray-600 hover:text-gray-900'
         }`}
       onClick={() => context.onChange(value)}
