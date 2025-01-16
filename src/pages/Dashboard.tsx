@@ -102,6 +102,13 @@ export default function Dashboard() {
             <Award className="w-5 h-5" />
             <span>Achievements</span>
           </Link>
+        <Link
+            to="settings"
+            className="flex items-center space-x-3 px-4 py-2 text-gray-700 rounded-lg hover:bg-utas-blue-50 hover:text-utas-blue-700"
+          >
+            <SettingsIcon className="w-5 h-5" />
+            <span>Settings</span>
+          </Link>
         </nav>
 
         <div className="absolute bottom-0 w-full p-4 border-t">
@@ -147,6 +154,7 @@ export default function Dashboard() {
             <Route path="students" element={<Students />} />
             <Route path="students/:id" element={<StudentProfile student={mockStudent} />} />
             <Route path="achievements" element={<Achievements />} />
+            <Route path="settings" element={<Settings />} />
           </Routes>
         </div>
       </div>

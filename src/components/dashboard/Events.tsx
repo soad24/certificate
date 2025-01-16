@@ -14,10 +14,10 @@ export default function Events() {
     },
     {
       id: 2,
-      title: 'AI & Machine Learning Seminar',
+      title: 'ورشة ادوات الذكاء الإصطناعي',
       date: '2024-03-22',
       time: '2:00 PM',
-      location: 'Main Hall',
+      location: 'ِAdam Hall',
       participants: 120,
       status: 'upcoming',
     },
@@ -35,10 +35,8 @@ export default function Events() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-gray-800">Events Management</h1>
-        <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
-          Create Event
-        </button>
+        <h1 className="text-2xl font-bold text-gray-800">Upcoming Events</h1>
+        
       </div>
 
       <div className="bg-white rounded-xl shadow-sm">

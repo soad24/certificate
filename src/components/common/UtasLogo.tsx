@@ -6,7 +6,9 @@ export default function UtasLogo() {
       <div className="w-10 h-10 bg-gradient-to-br from-utas-orange-500 to-utas-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
         U
       </div>
-      <span className="text-xl font-bold text-gray-800">Ejadda certificate</span>
+      <span className="text-xl font-bold text-gray-800">Ejadda certificate </span>
+      <img src="/pages/public/images/utas-logo.png" alt="utas logo" />
     </div>
+    
   );
 }
