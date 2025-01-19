@@ -6,7 +6,7 @@ export default function UtasLogo() {
         U
       </div>
       <span className="text-xl font-bold text-gray-800">Ejadda certificate </span>
-      <img src="/pages/public/images/utas-logo.png" alt="utas logo" />
+      
     </div>
     
   );

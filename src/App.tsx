@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
-import Dashboard from './pages/Dashboard.1';
+import Dashboard from './pages/Dashboard';
 import PublicLayout from './pages/public/PublicLayout';
 import EventList from './pages/public/EventList';
 import CertificateVerification from './pages/public/CertificateVerification';
