@@ -10,6 +10,7 @@ import {
   Menu,
   X,
   Building2,
+  Settings as SettingsIcon,
 } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import UtasLogo from '../components/common/UtasLogo';
@@ -21,6 +22,7 @@ import StudentProfile from '../components/student/StudentProfile';
 import EventSupervisor from './EventSupervisor';
 import HallSupervisor from './HallSupervisor';
 import ActivityHead from './ActivityHead';
+import Settings from './Settings';
 import NotificationCenter from '../components/notifications/NotificationCenter';
 import { mockStudent } from '../data/mockStudent';
 
@@ -102,7 +104,7 @@ export default function Dashboard() {
             <Award className="w-5 h-5" />
             <span>Achievements</span>
           </Link>
-        <Link
+          <Link
             to="settings"
             className="flex items-center space-x-3 px-4 py-2 text-gray-700 rounded-lg hover:bg-utas-blue-50 hover:text-utas-blue-700"
           >
