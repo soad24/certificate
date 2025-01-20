@@ -50,37 +50,16 @@ export default function PublicLayout() {
       </nav>
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-blue-600 to-purple-600 text-white">
+      <div className="bg-gradient-to-br from-orange-500 to-blue-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-                Discover Amazing Events at UTAS
+               شهادة الاجادة في الأنشطة الطلابية
               </h1>
               <p className="text-xl text-blue-100">
-                Join workshops, seminars, and conferences that enhance your academic journey and professional growth.
+              انضم إلى ورش العمل والندوات والمؤتمرات التي تعزز رحلتك الأكاديمية ونموك المهني
               </p>
-              <div className="flex space-x-4">
-                <Link
-                  to="/events"
-                  className="px-6 py-3 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors font-medium"
-                >
-                  Browse Events
-                </Link>
-                <Link
-                  to="/register"
-                  className="px-6 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-600 transition-colors font-medium"
-                >
-                  Register Now
-                </Link>
-              </div>
-            </div>
-            <div className="hidden md:block">
-              <img
-                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=2000"
-                alt="Events"
-                className="rounded-lg shadow-xl"
-              />
             </div>
           </div>
         </div>
