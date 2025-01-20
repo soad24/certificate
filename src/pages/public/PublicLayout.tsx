@@ -10,8 +10,7 @@ export default function PublicLayout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <Layout className="w-8 h-8 text-blue-600" />
-              <span className="ml-2 text-xl font-bold">UTAS Events</span>
+              <span className="ml-2 text-xl font-bold">جامعة التقنية والعلوم التطبيقية</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <Link
@@ -71,19 +70,19 @@ export default function PublicLayout() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="text-4xl font-bold text-blue-600">500+</div>
-              <div className="text-gray-600 mt-2">Events Hosted</div>
+              <div className="text-gray-600 mt-2">الفعاليات المستضافة</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-blue-600">10K+</div>
-              <div className="text-gray-600 mt-2">Students Engaged</div>
+              <div className="text-gray-600 mt-2">الطلاب المشاركين</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-blue-600">50+</div>
-              <div className="text-gray-600 mt-2">Expert Speakers</div>
+              <div className="text-gray-600 mt-2">المتحدثون</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-blue-600">95%</div>
-              <div className="text-gray-600 mt-2">Satisfaction Rate</div>
+              <div className="text-gray-600 mt-2">معدل الرضا</div>
             </div>
           </div>
         </div>
@@ -99,9 +98,9 @@ export default function PublicLayout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">About UTAS Events</h3>
+              <h3 className="text-lg font-semibold mb-4">شهادة الاجادة الطلابية</h3>
               <p className="text-gray-400">
-                Empowering students through engaging events, workshops, and learning opportunities.
+              تمكين الطلاب من خلال الفعاليات وورش العمل وفرص التعلم
               </p>
             </div>
             <div>
