@@ -16,9 +16,9 @@ interface EventBasicDetailsProps {
 }
 
 const categories = [
-  { id: 'science', label: 'Science' },
-  { id: 'culture', label: 'Culture' },
-  { id: 'technology', label: 'Technology' }
+  { id: 'StudentActivites', label: 'Student Activites - النشاط الطلابي' },
+  { id: 'Excellence', label: 'Competitions and Academic Excellence - المسابقات والتفوق العلمي' },
+  { id: 'Innovations', label: 'Scientific Projects and Innovations - المشاريع والابتكارات العلمية' }
 ];
 
 export default function EventBasicDetails({
