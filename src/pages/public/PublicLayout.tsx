@@ -80,10 +80,6 @@ export default function PublicLayout() {
               <div className="text-4xl font-bold text-blue-600">50+</div>
               <div className="text-gray-600 mt-2">المتحدثون</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600">95%</div>
-              <div className="text-gray-600 mt-2">معدل الرضا</div>
-            </div>
           </div>
         </div>
       </div>
