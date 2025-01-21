@@ -73,7 +73,7 @@ export default function PublicLayout() {
               <div className="text-gray-600 mt-2">الفعاليات المستضافة</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600">10K+</div>
+              <div className="text-4xl font-bold text-blue-600">1000</div>
               <div className="text-gray-600 mt-2">الطلاب المشاركين</div>
             </div>
             <div className="text-center">
@@ -103,7 +103,6 @@ export default function PublicLayout() {
               <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2 text-gray-400">
                 <li><Link to="/events" className="hover:text-white">Events</Link></li>
-                <li><Link to="/certificates" className="hover:text-white">Certificates</Link></li>
                 <li><Link to="/about" className="hover:text-white">About Us</Link></li>
                 <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
               </ul>
@@ -137,7 +136,7 @@ export default function PublicLayout() {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>© {new Date().getFullYear()} UTAS Events. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} UTAS . All rights reserved.</p>
           </div>
         </div>
       </footer>
