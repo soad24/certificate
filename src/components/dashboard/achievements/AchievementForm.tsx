@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { X, Award } from 'lucide-react';
+import Select from 'react-select';
 
 interface AchievementFormProps {
   onSubmit: (data: {
+    studentId: string;
     title: string;
     description: string;
     date: string;
@@ -13,6 +15,7 @@ interface AchievementFormProps {
 
 export default function AchievementForm({ onSubmit, onClose }: AchievementFormProps) {
   const [formData, setFormData] = useState({
+    studentId: '',
     title: '',
     description: '',
     date: '',
@@ -23,6 +26,13 @@ export default function AchievementForm({ onSubmit, onClose }: AchievementFormPr
     e.preventDefault();
     onSubmit(formData);
   };
+
+  // Example list of students (replace this with real data or an API call)
+  const students = [
+    { value: 'S12345', label: 'John Doe (S12345)' },
+    { value: 'S67890', label: 'Jane Smith (S67890)' },
+    { value: 'S54321', label: 'Michael Brown (S54321)' },
+  ];
 
   const categories = [
     'Academic',
@@ -50,6 +60,21 @@ export default function AchievementForm({ onSubmit, onClose }: AchievementFormPr
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Student ID
+            </label>
+            <Select
+              options={students}
+              placeholder="Search for a student..."
+              onChange={(selectedOption) =>
+                setFormData({ ...formData, studentId: selectedOption?.value || '' })
+              }
+              className="react-select-container"
+              classNamePrefix="react-select"
+            />
+          </div>
+
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Title
@@ -129,4 +154,4 @@ export default function AchievementForm({ onSubmit, onClose }: AchievementFormPr
       </div>
     </div>
   );
-}  
+}
