@@ -7,20 +7,25 @@ export default function Login() {
   const navigate = useNavigate();
   const { login } = useAuth();
   const [formData, setFormData] = useState({
-    username: '',
+    email: '',
     password: '',
   });
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+    setIsLoading(true);
     
     try {
-      await login(formData.username, formData.password);
-      navigate('/dashboard');
+      await login(formData.email, formData.password);
+      // Navigation will be handled by the PrivateRoute component
     } catch (err) {
       setError('Invalid credentials. Please try again.');
+      console.log('Demo credentials: student@example.com / student123');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -41,27 +46,36 @@ export default function Login() {
           </div>
         )}
 
+        {/* Demo Credentials Notice */}
+        <div className="mb-6 p-4 bg-blue-50 border border-blue-200 text-blue-600 rounded-lg">
+          <p className="text-sm">
+            <strong>Demo Credentials:</strong><br />
+            Email: student@example.com<br />
+            Password: student123
+          </p>
+        </div>
+
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Civil ID (Username)
+              Email
             </label>
             <div className="relative">
               <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
-                type="text"
+                type="email"
                 required
-                value={formData.username}
-                onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="pl-10 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Enter your Civil ID"
+                placeholder="Enter your email"
               />
             </div>
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Phone Number (Password)
+              Password
             </label>
             <div className="relative">
               <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -71,28 +85,18 @@ export default function Login() {
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                 className="pl-10 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Enter your phone number"
+                placeholder="Enter your password"
               />
             </div>
           </div>
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+            disabled={isLoading}
+            className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors disabled:opacity-50"
           >
-            Sign In
+            {isLoading ? 'Signing in...' : 'Sign In'}
           </button>
-
-          <p className="text-center text-sm text-gray-600">
-            Don't have an account?{' '}
-            <button
-              type="button"
-              onClick={() => navigate('/register')}
-              className="text-blue-600 hover:text-blue-700 font-medium"
-            >
-              Register now
-            </button>
-          </p>
         </form>
       </div>
     </div>

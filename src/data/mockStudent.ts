@@ -1,8 +1,8 @@
 export const mockStudent = {
   id: 1,
-  name: "Sarah Johnson",
-  email: "sarah.j@university.edu",
-  department: "Computer Science",
+  name: "سعاد الخاطري",
+  email: "student@example.com",
+  department: "قسم تقنية المعلومات",
   studentId: "CS2024001",
   totalPoints: 240,
   transcript: {
@@ -10,33 +10,33 @@ export const mockStudent = {
     events: [
       {
         id: 1,
-        title: "Web Development Workshop",
+        title: "ورشة تطوير الويب",
         date: "2024-03-15",
-        type: "Technical Workshop",
+        type: "ورشة تقنية",
         points: 50,
         status: "completed"
       },
       {
-        id: 3,
-        title: "AI & Machine Learning Conference",
+        id: 2,
+        title: "مؤتمر الذكاء الاصطناعي",
         date: "2024-03-10",
-        type: "Technical Conference",
+        type: "مؤتمر",
         points: 80,
         status: "completed"
       },
       {
-        id: 5,
-        title: "Research Symposium",
+        id: 3,
+        title: "ندوة البحث العلمي",
         date: "2024-03-05",
-        type: "Academic",
+        type: "ندوة أكاديمية",
         points: 60,
         status: "completed"
       },
       {
-        id: 6,
-        title: "Software Engineering Seminar",
+        id: 4,
+        title: "ورشة هندسة البرمجيات",
         date: "2024-02-28",
-        type: "Technical Seminar",
+        type: "ورشة تقنية",
         points: 50,
         status: "completed"
       }

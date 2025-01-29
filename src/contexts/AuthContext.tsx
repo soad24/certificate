@@ -1,10 +1,11 @@
 import React, { createContext, useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface User {
   id: string;
   name: string;
   email: string;
-  role: 'admin' | 'event_supervisor' | 'hall_supervisor' | 'activity_head' | 'student' | 'external';
+  role: 'admin' | 'student' | 'event_supervisor' | 'hall_supervisor' | 'activity_head' | 'external';
 }
 
 interface AuthContextType {
@@ -19,9 +20,10 @@ const AuthContext = createContext<AuthContextType | null>(null);
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState<User | null>(null);
+  const navigate = useNavigate();
 
   const login = async (email: string, password: string) => {
-    // Demo credentials check
+    // Demo login logic
     if (email === 'admin@example.com' && password === 'admin123') {
       const adminUser: User = {
         id: '1',
@@ -31,6 +33,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       };
       setUser(adminUser);
       setIsAuthenticated(true);
+      navigate('/dashboard');
+    } else if (email === 'student@example.com' && password === 'student123') {
+      const studentUser: User = {
+        id: '2',
+        name: 'Sarah Johnson',
+        email: email,
+        role: 'student'
+      };
+      setUser(studentUser);
+      setIsAuthenticated(true);
+      navigate('/student');
     } else {
       throw new Error('Invalid credentials');
     }
@@ -39,6 +52,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const logout = () => {
     setUser(null);
     setIsAuthenticated(false);
+    navigate('/login');
   };
 
   return (

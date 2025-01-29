@@ -26,14 +26,14 @@ export default function StudentProfile({ student }: StudentProfileProps) {
           <div>
             <h1 className="text-2xl font-bold text-gray-800">{student.name}</h1>
             <p className="text-gray-600">{student.department}</p>
-            <p className="text-gray-500">Student ID: {student.studentId}</p>
+            <p className="text-gray-500">الرقم الأكاديمي: {student.studentId}</p>
           </div>
         </div>
         
         {/* Progress Bar */}
         <div className="mt-6">
           <div className="flex justify-between items-center mb-2">
-            <span className="text-sm font-medium text-gray-600">Progress to Ejaada Certificate</span>
+            <span className="text-sm font-medium text-gray-600">التقدم نحو شهادة الإجادة</span>
             <span className="text-sm font-medium text-blue-600">{progress}%</span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2.5">
@@ -44,8 +44,8 @@ export default function StudentProfile({ student }: StudentProfileProps) {
           </div>
           <p className="text-sm text-gray-500 mt-2">
             {isEligible
-              ? 'Congratulations! You are eligible for the Ejaada Certificate.'
-              : `${EJAADA_CERTIFICATE_THRESHOLD - student.totalPoints} more points needed for the Ejaada Certificate.`}
+              ? 'مبروك! أنت مؤهل للحصول على شهادة الإجادة.'
+              : `${EJAADA_CERTIFICATE_THRESHOLD - student.totalPoints} نقطة إضافية مطلوبة للحصول على شهادة الإجادة.`}
           </p>
         </div>
       </div>
@@ -53,9 +53,9 @@ export default function StudentProfile({ student }: StudentProfileProps) {
       {/* Tabs */}
       <Tabs value={activeTab} onChange={setActiveTab} className="w-full">
         <TabsList>
-          <TabsTrigger value="events">Registered Events</TabsTrigger>
-          <TabsTrigger value="transcript">Transcript</TabsTrigger>
-          {isEligible && <TabsTrigger value="certificate">Ejaada Certificate</TabsTrigger>}
+          <TabsTrigger value="events">الفعاليات المسجلة</TabsTrigger>
+          <TabsTrigger value="transcript">السجل الأكاديمي</TabsTrigger>
+          {isEligible && <TabsTrigger value="certificate">شهادة الإجادة</TabsTrigger>}
         </TabsList>
 
         <TabsContent value="events">
