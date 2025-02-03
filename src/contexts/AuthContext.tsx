@@ -37,13 +37,23 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     } else if (email === 'student@example.com' && password === 'student123') {
       const studentUser: User = {
         id: '2',
-        name: 'Sarah Johnson',
+        name: 'سعاد الخاطري',
         email: email,
         role: 'student'
       };
       setUser(studentUser);
       setIsAuthenticated(true);
       navigate('/student');
+    } else if (email === 'visitor@example.com' && password === 'visitor123') {
+      const visitorUser: User = {
+        id: '3',
+        name: 'سعود الصبحي',
+        email: email,
+        role: 'external'
+      };
+      setUser(visitorUser);
+      setIsAuthenticated(true);
+      navigate('/visitor');
     } else {
       throw new Error('Invalid credentials');
     }

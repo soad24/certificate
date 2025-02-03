@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import StudentDashboard from './pages/StudentDashboard';
+import VisitorDashboard from './pages/VisitorDashboard';
 import PublicLayout from './pages/public/PublicLayout';
 import EventList from './pages/public/EventList';
 import CertificateVerification from './pages/public/CertificateVerification';
@@ -15,7 +16,14 @@ function PrivateRoute({ children, allowedRole }: { children: React.ReactNode; al
   }
   
   if (allowedRole && user?.role !== allowedRole) {
-    return <Navigate to={user?.role === 'student' ? '/student' : '/dashboard'} />;
+    switch (user?.role) {
+      case 'student':
+        return <Navigate to="/student" />;
+      case 'external':
+        return <Navigate to="/visitor" />;
+      default:
+        return <Navigate to="/dashboard" />;
+    }
   }
   
   return <>{children}</>;
@@ -46,6 +54,14 @@ function AppRoutes() {
         element={
           <PrivateRoute allowedRole="student">
             <StudentDashboard />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/visitor/*"
+        element={
+          <PrivateRoute allowedRole="external">
+            <VisitorDashboard />
           </PrivateRoute>
         }
       />
