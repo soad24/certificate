@@ -110,9 +110,9 @@ export default function EventList() {
   return (
     <div className="space-y-8">
       <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold text-gray-900">Upcoming Events</h1>
+        <h1 className="text-4xl font-bold text-gray-900">الفعاليات القادمة</h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Discover and participate in our upcoming events, workshops, and conferences
+        استكشف فرص الإلهام والتعلم لتحقيق نجاح أكاديمي ومهني متميز
         </p>
       </div>
 
