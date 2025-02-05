@@ -3,168 +3,82 @@
 @tailwind utilities;
 
 /* Base animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.2); }
+  66% { transform: translate(-20px, 20px) scale(0.8); }
 }
 
-@keyframes slideIn {
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fade-slide-up {
   from {
-    transform: translateY(20px);
     opacity: 0;
+    transform: translateY(4rem);
   }
   to {
+    opacity: 1;
     transform: translateY(0);
-    opacity: 1;
   }
 }
 
-@keyframes scaleIn {
-  from {
-    transform: scale(0.95);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* Custom utility classes */
-.animate-fade-in {
-  animation: fadeIn 0.3s ease-out;
-}
-
-.animate-slide-in {
-  animation: slideIn 0.4s ease-out;
-}
-
-.animate-scale-in {
-  animation: scaleIn 0.3s ease-out;
-}
-
-/* Hover animations */
-.hover-lift {
-  transition: transform 0.2s ease-out;
-}
-
-.hover-lift:hover {
-  transform: translateY(-2px);
-  color: theme('colors.utas-orange.500');
-}
-
-.hover-scale {
-  transition: all 0.2s ease-out;
-}
-
-.hover-scale:hover {
-  transform: scale(1.02);
-  color: theme('colors.utas-orange.500');
-}
-
-/* Card animations */
-.card-hover {
-  transition: all 0.3s ease-out;
-}
-
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px -10px rgba(249, 115, 22, 0.15);
-  border-color: theme('colors.utas-orange.200');
-}
-
-/* Button animations */
-.button-hover {
-  transition: all 0.2s ease-out;
-}
-
-.button-hover:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px -2px rgba(249, 115, 22, 0.2);
-  background-color: theme('colors.utas-orange.600');
-}
-
-.button-hover:active {
-  transform: translateY(0);
-  background-color: theme('colors.utas-orange.700');
-}
-
-/* Smooth page transitions */
-.page-transition {
-  animation: fadeIn 0.3s ease-out;
-}
-
-/* Notification animations */
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.notification-slide {
-  animation: slideInRight 0.3s ease-out;
-}
-
-/* Loading animations */
-@keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.5; }
-  100% { opacity: 1; }
-}
-
-.loading-pulse {
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-/* Gradient animations */
-.gradient-shift {
-  background-size: 200% 200%;
-  animation: gradientShift 5s ease infinite;
-}
-
-@keyframes gradientShift {
+@keyframes gradient-shift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Smooth transitions for all interactive elements */
-button, a, input, select {
-  transition: all 0.2s ease-out;
+/* Custom animations */
+.animate-blob {
+  animation: blob 10s infinite cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Form element hover states */
-input:focus, select:focus, textarea:focus {
-  border-color: theme('colors.utas-orange.500');
-  box-shadow: 0 0 0 2px theme('colors.utas-orange.100');
+.animate-float {
+  animation: float 6s infinite ease-in-out;
 }
 
-/* Link hover states */
-a:hover {
-  color: theme('colors.utas-orange.600');
+.animate-fade-slide-up {
+  animation: fade-slide-up 0.8s ease-out forwards;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+.animate-gradient {
+  animation: gradient-shift 15s ease infinite;
+  background-size: 200% 200%;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
+/* Animation delays */
+.animation-delay-2000 {
+  animation-delay: 2s;
 }
 
-::-webkit-scrollbar-thumb {
-  background: theme('colors.utas-orange.200');
-  border-radius: 4px;
+.animation-delay-300 {
+  animation-delay: 300ms;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: theme('colors.utas-orange.300');
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-900 {
+  animation-delay: 900ms;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Custom styles */
+.hero-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #f97316, #2563eb);
 }
